@@ -1,30 +1,34 @@
 # Data Engineering Zoomcamp Learning Note
 
-## Learning Structure of Data Engineer
+## Learning Path for Data Engineer
 
-### Local Delpoyment Environment
+### Local Deployment
 
-#### **Python 和包管理工具**
+#### **Python**
 - **功能**：用于编写和执行数据处理脚本，`pip` 用于安装外部库。
-- 下载：[Python](https://www.python.org/downloads/)
+- Download：[Python](https://www.python.org/downloads/)
+#### **数据库（如 MySQL 或 PostgreSQL）**
+- **功能**：存储和管理结构化数据，支持数据查询。
+
+- Download：[MySQL](https://www.mysql.com/downloads/) 或 [PostgreSQL](https://www.postgresql.org/download/)
+
+#### **数据管道和任务调度：**
+- **使用 Airflow 构建数据管道**
+- **功能**：任务调度和工作流管理
+  - 工作流（Workflow）：Airflow 通过定义任务之间的依赖关系来创建工作流，确保任务按照正确的顺序执行。
+  - 调度（Scheduling）：任务可以根据时间间隔进行调度执行，支持 Cron 表达式等多种调度方式。
+- Download: [Airflow](https://airflow.apache.org/docs/apache-airflow/stable/index.html)
+- **使用 Docker 容器化应用**
+- **功能**：构建容器化的应用，确保跨环境一致性，便于在本地模拟云端环境，构建和部署应用。配置 Dockerfile 来构建和部署数据处理应用。
+- Download：[Docker](https://www.docker.com/get-started)
 
 #### **Git**
 - **功能**：版本控制工具，用于管理代码历史和团队协作。
-- **为什么要下载**：帮助管理代码版本和协作开发。
-- **在 DE 角色**：管理代码版本和进行团队协作。
+- Download：[Git for Windows](https://git-scm.com/downloads)
 
-- 下载：[Git for Windows](https://git-scm.com/downloads)
-
-#### **数据库（如 MySQL 或 PostgreSQL）**
-- **功能**：存储和管理结构化数据，支持数据查询。
-- 下载：[MySQL](https://www.mysql.com/downloads/) 或 [PostgreSQL](https://www.postgresql.org/download/)
-
-#### **Docker**
-- **功能**：容器化工具，帮助在一致的环境中运行应用。构建容器化的数据处理应用，确保跨环境一致性，便于在本地模拟云端环境，构建和部署应用。
-- 下载：[Docker](https://www.docker.com/get-started)
-  
-
-### 云端部署
+### Cloud Platform Deployment
+- 使用 Docker 来部署和管理应用。
+- 使用云服务（AWS、[GCP](https://console.cloud.google.com/)）进行应用托管。
 
 ## Questions during module 1
 - 什么是 Ubuntu？
