@@ -9,7 +9,6 @@
 - Download：[Python](https://www.python.org/downloads/)
 #### **数据库（如 MySQL 或 PostgreSQL）**
 - **功能**：存储和管理结构化数据，支持数据查询。
-
 - Download：[MySQL](https://www.mysql.com/downloads/) 或 [PostgreSQL](https://www.postgresql.org/download/)
 
 #### **数据管道和任务调度：**
@@ -43,18 +42,25 @@
 
 - **docker run -it python:3.9; docker run -it python:3.9 bash; docker run -it --entrypoint=bash python:3.9 三个命令的区别**
 
-  （1）docker run -it python:3.9
-  - 启动一个基于 python:3.9 镜像的 Docker 容器，并进入 Python 交互式环境，在容器内直接使用 Python 环境进行交互式编程。
+  - docker run -it python:3.9
+    - 启动一个基于 python:3.9 镜像的 Docker 容器，并进入 Python 交互式环境，在容器内直接使用 Python 环境进行交互式编程。
   
-  （2）docker run -it python:3.9 bash
-  - 容器启动后，会直接进入 bash 命令行界面，而不是 Python 环境；在 bash 环境中，你可以运行操作系统级命令（如安装包、查看文件等）。
+  - docker run -it python:3.9 bash
+    - 容器启动后，会直接进入 bash 命令行界面，而不是 Python 环境；在 bash 环境中，你可以运行操作系统级命令（如安装包、查看文件等）。
   
-  （3）docker run -it --entrypoint=bash python:3.9
-  - 这个命令与第二个命令功能相似，但显式地修改了容器的 entrypoint，将其设置为 bash，而不是镜像默认的 python 命令。--entrypoint=bash 参数会覆盖容器默认的入口点（通常是服务启动脚本）。这意味着容器启动后并不会执行容器中预设的服务启动流程，而是进入 Bash shell。这可能导致服务没有启动，或者其他本该执行的自动化流程（例如应用程序初始化、网络设置等）被跳过。另一方面，docker run -it python:3.9 bash 会启动一个交互式 Bash shell，但不会改变容器的默认启动行为。如果你只是通过这种方式进入容器，生产流程（如服务的启动）不会受到影响，因为容器本身会按照预设的 ENTRYPOINT 或 CMD 指令来启动。
+  - docker run -it --entrypoint=bash python:3.9
+    - 这个命令与第二个命令功能相似，但显式地修改了容器的 entrypoint，将其设置为 bash，而不是镜像默认的 python 命令。--entrypoint=bash 参数会覆盖容器默认的入口点（通常是服务启动脚本）。这意味着容器启动后并不会执行容器中预设的服务启动流程，而是进入 Bash shell。这可能导致服务没有启动，或者其他本该执行的自动化流程（例如应用程序初始化、网络设置等）被跳过。另一方面，docker run -it python:3.9 bash 会启动一个交互式 Bash shell，但不会改变容器的默认启动行为。如果你只是通过这种方式进入容器，生产流程（如服务的启动）不会受到影响，因为容器本身会按照预设的 ENTRYPOINT 或 CMD 指令来启动。
 
-
-
-
+- **容器启动postgreSQL后，只能在容器内登录至数据库，而无法在容器外访问数据库，且收到“角色“root”不存在”的报错**
+  - 这意味着您已经在本地安装了 postgres。Winkey + R 输入 services.msc 根据安装的版本搜索 Postgres 服务。单击停止。
+  - **退出PostgreSQL服务**
+    - 在 PostgreSQL 命令行使用 \q 退出。
+    - 如果想停止容器，可以使用docker ps查看<container_id_or_name>然后 docker stop <container_id_or_name>。
+    - 在交互式终端中可以使用 Ctrl + C 来中断。
+  
+- **如何下载ny_taxi的csv数据**
+  - csv数据备份地址 https://github.com/DataTalksClub/nyc-tlc-data
+  - 
 
 ## Data Engineering Zoomcamp Information
 
